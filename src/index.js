@@ -74,6 +74,7 @@ render() {
           <List 
            Cards={this.state.List}
           />
+         <p>{"テスト"}</p>
         </div>
     </div>
   );
