@@ -25,14 +25,15 @@ class List extends React.Component {
 
 renderCard(i) {
  
-  return (<Card value={this.state.List[i]}
+  return (<Card value={this.state.Cards[i]}
     //onClick={() => this.props.onClick(i)}
   />);
   
 }
 AddClick() {
 const Cards=this.state.Cards.slice();
-Cards.push("testdayo");
+var url=prompt("ページのURLを入力してください");
+Cards.push(url);
   this.setState({Cards:Cards ,
   });
  }
@@ -48,7 +49,7 @@ render() {
           })}   
     <button 
     className="AddCard" 
-    onClick={this.AddClick}
+    onClick={() => this.AddClick()}
     >
       {"+"} 
     </button>
@@ -61,21 +62,38 @@ class Home extends React.Component {
 constructor(props) {
   super(props);
   this.state = {
-    List: Array(9).fill("test"),
+    Lists:Array(1).fill(Array(0).fill(null)),
   };
 }
-
-
+AddClick() {
+  const Lists=this.state.Lists.slice();
+  Lists.push(Array(0).fill(null));
+    this.setState(
+      {Lists:Lists},
+      )
+  }
 render() {
+  const Lists = this.state.Lists;
+  const datas = Lists.map((step, i) => {
+   
+    return (
+      <div className="list">
+      <List 
+     Cards={this.state.Lists[i]}
+     />
+   </div> 
+    );
+  });
  
   return (
     <div className="home">
-        <div className="list">
-          <List 
-           Cards={this.state.List}
-          />
-         <p>{"テスト"}</p>
-        </div>
+       {datas}
+    <button 
+    className="AddList" 
+    onClick={() => this.AddClick()}
+    >
+      {"+"} 
+    </button>
     </div>
   );
 }
