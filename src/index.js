@@ -1,17 +1,88 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+function Card (props) {
+  
+  return (
+    <button 
+    className="card" 
+    //onClick={props.onClick}
+    >
+      {props.value}
+    </button>
+  );
+
+}
+
+class List extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      Cards:props.Cards,
+    };
+  }
+
+renderCard(i) {
+ 
+  return (<Card value={this.state.List[i]}
+    //onClick={() => this.props.onClick(i)}
+  />);
+  
+}
+AddClick() {
+const Cards=this.state.Cards.slice();
+Cards.push("testdayo");
+  this.setState({Cards:Cards ,
+  });
+ }
+render() {
+  return (
+    <div>
+    {this.state.Cards.map((val, i) => {
+              return (
+               this.renderCard(i)
+              );
+            
+          
+          })}   
+    <button 
+    className="AddCard" 
+    onClick={this.AddClick}
+    >
+      {"+"} 
+    </button>
+</div>
+  );
+}
+}
+
+class Home extends React.Component {
+constructor(props) {
+  super(props);
+  this.state = {
+    List: Array(9).fill("test"),
+  };
+}
+
+
+render() {
+ 
+  return (
+    <div className="home">
+        <div className="list">
+          <List 
+           Cards={this.state.List}
+          />
+        </div>
+    </div>
+  );
+}
+}
+
+// ========================================
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+<Home />,
+document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
