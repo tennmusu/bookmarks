@@ -2,7 +2,10 @@ body {
   font: 20px "Century Gothic", Futura, sans-serif;
   margin: 20px;
 }
-
+a{
+  color: #333333;
+  text-decoration: none;
+}
 .list{
   border: 8px solid rgb(104, 138, 177);
   float: left;

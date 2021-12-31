@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './gettitle.php'
-import $ from 'jquery'; 
+//import $ from 'jquery'; 
 function Card (props) {
   
   return (
     <button 
     className="card" 
-    //onClick={props.onClick}
     >
-      {props.value}
+      <a href={props.value[1]} target="_blank" rel="noopener noreferrer"> {props.value[0]}</a>
     </button>
   );
 
@@ -32,27 +30,12 @@ renderCard(i) {
   />);
   
 }
-Ajax(i) {
-  
- $.ajax({
-    url: './gettitle.php',
-    type: 'post',
-    dataType: 'text/html',
-    data: {'url':i}
-}).done(function(data){
-    console.log(data);
-    this.setState(
-      {title:data},
-      )
-}).fail(function(){
-    console.log('failed');
-});
-}
+
 AddClick() {
 const Cards=this.state.Cards.slice();
-var url=prompt("ページのURLを入力してください");
-this.Ajax(url);
-Cards.push(url);
+var url=prompt("ページのタイトルとURLを半角スペースを空けて入力してください");
+const chars = url.split(' ');
+Cards.push(chars);
   this.setState({Cards:Cards ,
   });
  }
