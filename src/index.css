@@ -12,8 +12,35 @@ a{
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
-  width: 300px;
+  width: 320px;
 
+}
+.back {
+  background: rgb(255, 255, 255);
+  border: 1px solid #999;
+  float: left;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 30px;
+  height: 47px;
+  margin-right: 2px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 130px;
+}
+.category {
+  background: rgb(244, 245, 194);
+  border: 1px solid #999;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 30px;
+  height: 30px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 220px;
 }
 .card {
   background: #fff;
@@ -29,7 +56,23 @@ a{
   text-align: center;
   width: 300px;
 }
-
+.delete{
+  background: #fff;
+  border: 1px solid #999;
+  margin-left: 0px;
+  margin-top: -1px;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  line-height:10px;
+  font-weight: bold;
+  text-align: center;
+}
+.cardclass{
+ 
+  display: flex;
+ 
+}
 .card:focus {
   outline: none;
 }
@@ -54,7 +97,6 @@ a{
   background: #fff;
   border: 1px solid #999;
   font-size: 22px;
-  float: left;
   font-weight: normal;
   line-height: 30px;
   height: 30px;
@@ -70,6 +112,6 @@ a{
 }
 
 .home {
-  display: flex;
+  display:flexbox;
   flex-direction: row;
 }
