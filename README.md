@@ -32,4 +32,4 @@
 
 配列を扱う関数について学びました。
 
-[実装結果(GithubPages)](https://tennmusu.github.io/bookmarks/)
+[実装結果(GitHub Pages)](https://tennmusu.github.io/bookmarks/)
