@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Reactを使用して簡易的なブックマークツールを作成しました。
+## 作成目的   
+1. チュートリアルで学んだことを理解しているか確かめるため。
+2. 自力でコンポーネントを設計することに挑戦するため。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 実装した機能
+1. カテゴリー追加
+2. カテゴリーへジャンプする機能
+3. カテゴリーのリストにウェブページを追加する機能
+4. カテゴリーのリストからウェブページを削除する機能
+5. カテゴリー画面からホームへ戻る機能
 
-## Available Scripts
+## 実装したい機能(現時点では未実装なもの)
+### 1. データをデータベース(MySQL)に保存し、再利用時に呼び出せるようにする機能
+### 2. 現時点ではウェブページを追加する際はタイトルとURLを入力する必要があるが、<br>URLを入力すればタイトルを自動で取得できる機能
+   ※PHP単体では実装できたが、JavaScriptとの連携は未実装。
+   
+## 難しかった部分
+### - 子コンポーネントから親コンポーネントへデータを渡す部分
+  カテゴリー内でのリストの変更結果を親コンポーネントに渡す必要がありました。親コンポーネントの関数を渡して子コンポーネント内で呼び出すことで解決しました。
+  この実装を行うことで一度ホーム画面に戻った後、再度カテゴリーへジャンプしても変更結果が残るようになりました。
 
-In the project directory, you can run:
+## 学習したこと
+### 1. Ajax通信やウェブスクレイピング
 
-### `npm start`
+現時点では実装できていませんが、実装しようと奮闘する過程でAjaxがどのように動いているのか知ることができました。
+また、PythonやPHPなどでウェブスクレイピングができることを学びました。
+### 2. CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+クラスを使って要素を綺麗に並べる方法を学びました。
+### 3.JavaScript
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+配列を扱う関数について学びました。
